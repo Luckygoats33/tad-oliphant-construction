@@ -47,38 +47,7 @@
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ink: #E0E8ED;
-    --ink-secondary: #9EAEB8;
-    --ink-muted: #6A7D88;
-    --surface: #0A1418;
-    --surface-card: #12222A;
-    --surface-warm: #0E1A20;
-    --border: #1E3540;
-    --border-light: #1A2E38;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-    --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
-    --shadow-gold: 0 6px 20px rgba(232,145,58,0.2);
-    --gold-glow: rgba(232,145,58,0.08);
-  }
-}
-:root[data-theme="dark"] {
-  --ink: #E0E8ED;
-  --ink-secondary: #9EAEB8;
-  --ink-muted: #6A7D88;
-  --surface: #0A1418;
-  --surface-card: #12222A;
-  --surface-warm: #0E1A20;
-  --border: #1E3540;
-  --border-light: #1A2E38;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-  --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
-  --shadow-gold: 0 6px 20px rgba(232,145,58,0.2);
-  --gold-glow: rgba(232,145,58,0.08);
-}
+/* Dark mode disabled — contractor site stays light */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -881,41 +850,109 @@ a.area-tag:hover {
   .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 767px) {
-  .nav-inner { height: 90px; }
-  .nav-logo img { width: 72px; height: 72px; }
-  .nav-logo-text { display: none; }
-  .hero, .page-hero { margin-top: 90px; }
+  .nav-inner { height: 64px; }
+  .nav-logo img { width: 48px; height: 48px; }
+  .nav-logo-text { display: flex; margin-left: 0.4rem; line-height: 1.05; }
+  .logo-name { font-size: 0.7rem; letter-spacing: 2px; }
+  .logo-tagline { font-size: 0.7rem; letter-spacing: 2px; }
+  .hero, .page-hero { margin-top: 64px; }
   .nav-toggle { display: block; }
-  .nav-links {
-    display: none; flex-direction: column; position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+
+  /* Fullscreen mobile menu — Brothers Gutters style */
+  .nav-links { display: none; }
+  .site-nav:has(.nav-links.open) {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     background: var(--navy-deep);
-    padding: 5rem 2rem 2rem; z-index: 99;
-    justify-content: flex-start; gap: 0;
   }
-  .nav-links.open { display: flex; }
-  .nav-links.open li {
-    animation: menuItemIn 0.4s var(--ease-out-expo) both;
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background: var(--navy-deep);
+    padding: 6rem 2rem 2rem;
+    gap: 0;
+    z-index: 999;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
-  .nav-links.open li:nth-child(1) { animation-delay: 0.05s; }
-  .nav-links.open li:nth-child(2) { animation-delay: 0.1s; }
-  .nav-links.open li:nth-child(3) { animation-delay: 0.15s; }
-  .nav-links.open li:nth-child(4) { animation-delay: 0.2s; }
-  .nav-links.open li:nth-child(5) { animation-delay: 0.25s; }
-  .nav-links.open li:nth-child(6) { animation-delay: 0.3s; }
-  .nav-links.open li:nth-child(7) { animation-delay: 0.35s; }
-  .nav-links.open li:nth-child(8) { animation-delay: 0.4s; }
-  .nav-links a {
-    padding: 0.85rem; width: 100%;
-    font-size: clamp(1rem, 3vw, 1.15rem); font-weight: 700;
+  .nav-links.open > li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: menuItemIn 0.4s ease forwards;
   }
-  .nav-toggle { position: relative; z-index: 101; }
+  .nav-links.open > li:nth-child(1) { animation-delay: 0.05s; }
+  .nav-links.open > li:nth-child(2) { animation-delay: 0.12s; }
+  .nav-links.open > li:nth-child(3) { animation-delay: 0.19s; }
+  .nav-links.open > li:nth-child(4) { animation-delay: 0.26s; }
+  .nav-links.open > li:nth-child(5) { animation-delay: 0.33s; }
+  .nav-links.open > li:nth-child(6) { animation-delay: 0.40s; }
+  .nav-links.open > li:nth-child(7) { animation-delay: 0.47s; }
+  .nav-links.open > li:nth-child(8) { animation-delay: 0.54s; }
+  .nav-links.open > li:last-child { border-bottom: none; }
+  .nav-links.open > li > a {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    font-weight: 900;
+    color: #fff;
+    padding: 1rem 0 0.5rem;
+    display: block;
+    width: 100%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    background: none;
+    border-radius: 0;
+  }
+  .nav-links.open > li > a:hover,
+  .nav-links.open > li > a:active { color: var(--gold); background: none; }
+
+  /* Services dropdown shown inline, 2-column grid */
+  .nav-links.open .has-dropdown > a .caret { display: none; }
   .has-dropdown:hover .nav-dropdown { display: none; }
-  .has-dropdown.dropdown-open .nav-dropdown {
-    display: block; position: static; box-shadow: none; border: none;
-    background: rgba(255,255,255,0.04); border-radius: var(--radius); margin: 0.25rem 0;
+  .nav-links.open .has-dropdown .nav-dropdown {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0 0 1rem;
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    min-width: unset;
+    width: 100%;
+    transform: none;
+    border-radius: 0;
+    z-index: auto;
     backdrop-filter: none;
   }
+  .nav-links.open .has-dropdown .nav-dropdown::before { display: none; }
+  .nav-links.open .has-dropdown .nav-dropdown li { width: 50%; }
+  .nav-links.open .has-dropdown .nav-dropdown li a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.55);
+    padding: 0.4rem 0;
+    display: block;
+    transition: color 0.2s;
+    letter-spacing: 0;
+    text-transform: none;
+    background: none;
+    border-radius: 0;
+  }
+  .nav-links.open .has-dropdown .nav-dropdown li a:hover,
+  .nav-links.open .has-dropdown .nav-dropdown li a:active { color: var(--gold); background: none; }
+
+  /* Hide CTA button in mobile menu */
+  .nav-links.open .nav-cta { display: none !important; }
+  body:has(.nav-links.open) .mobile-cta { display: none !important; }
+
+  .nav-toggle { position: relative; z-index: 1000; }
+
   .hero { min-height: 85vh; min-height: 85svh; align-items: flex-end; }
   .hero-content { padding-left: 1.5rem; padding-bottom: 5rem; }
   .hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }

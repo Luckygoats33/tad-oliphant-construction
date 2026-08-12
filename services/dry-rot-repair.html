@@ -472,6 +472,7 @@ function toggleMobileMenu(btn) {
   var open = nav.classList.toggle('open');
   btn.setAttribute('aria-expanded', open);
   btn.innerHTML = open ? '&times;' : '&#9776;';
+  document.body.style.overflow = open ? 'hidden' : '';
 }
 function openEstimate(e) { e.preventDefault(); document.getElementById('estimateModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closeEstimate() { document.getElementById('estimateModal').classList.remove('open'); document.body.style.overflow = ''; }

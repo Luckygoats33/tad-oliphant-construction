@@ -300,7 +300,8 @@
 </div>
 
 <script>
-function toggleMobileMenu(btn) { var nav = document.querySelector('.nav-links'); var open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open); btn.innerHTML = open ? '&times;' : '&#9776;'; }
+function toggleMobileMenu(btn) { var nav = document.querySelector('.nav-links'); var open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open); btn.innerHTML = open ? '&times;' : '&#9776;';
+  document.body.style.overflow = open ? 'hidden' : ''; }
 function openEstimate(e) { e.preventDefault(); document.getElementById('estimateModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closeEstimate() { document.getElementById('estimateModal').classList.remove('open'); document.body.style.overflow = ''; }
 function submitEstimate(e) { e.preventDefault(); var form = document.getElementById('estimateForm'); fetch('https://formsubmit.co/ajax/oliphant454@yahoo.com', { method: 'POST', body: new FormData(form) }).then(function(r) { return r.json(); }).then(function() { form.style.display = 'none'; document.getElementById('estimateSuccess').classList.add('show'); }).catch(function() { form.style.display = 'none'; document.getElementById('estimateSuccess').classList.add('show'); }); }

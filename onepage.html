@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tad Oliphant Construction | Oregon Coast General Contractor</title>
+<meta name="description" content="A+ BBB-rated general contractor in Siletz, OR. Decks, siding, roofing, remodeling, windows & dry-rot repair. Serving Lincoln County since 2015. Free estimates.">
+<link rel="icon" type="image/png" href="images/logo.png">
+<meta name="theme-color" content="#063E48">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#0B7285;--teal-deep:#063E48;--teal-mid:#085465;
+  --amber:#E8913A;--amber-light:#F0A552;--amber-dark:#CC7A2E;
+  --ink:#1a2024;--ink-mid:#4A5C66;--ink-light:#7A8D96;
+  --surface:#F5F8FA;--white:#fff;--border:#D0DCE5;
+  --radius:8px;--max-w:1100px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--ink);background:var(--surface);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 1.25rem}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--teal-deep);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:.5rem;color:#fff}
+.nav-logo img{width:44px;height:44px;object-fit:contain;border-radius:4px}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.05}
+.logo-name{font-size:.72rem;font-weight:900;letter-spacing:2px;color:#fff;text-transform:uppercase}
+.logo-tag{font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--amber);text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.8);font-size:.82rem;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--amber)!important;color:#fff!important;padding:.5rem 1rem!important;border-radius:var(--radius)!important;font-weight:700!important}
+.nav-cta:hover{background:var(--amber-light)!important}
+.nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:.25rem;min-width:44px;min-height:44px}
+@media(max-width:767px){
+  .nav-links{display:none;flex-direction:column;position:fixed;inset:0;background:var(--teal-deep);padding:5rem 2rem 2rem;z-index:999;gap:0;justify-content:flex-start;align-items:flex-start;overflow-y:auto}
+  .nav-links.open{display:flex}
+  .nav-links.open li{width:100%;border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav-links.open a{font-size:clamp(1.8rem,6vw,2.4rem);font-weight:900;color:#fff;padding:.8rem 0;display:block;text-transform:uppercase;letter-spacing:-.02em}
+  .nav-links.open a:hover{color:var(--amber)}
+  .nav-links.open .nav-cta{display:none!important}
+  .nav-toggle{display:flex;align-items:center;justify-content:center;z-index:1000;position:relative}
+}
+@media(min-width:768px){
+  .nav-inner{height:80px}
+  .nav-logo img{width:56px;height:56px}
+  .logo-name{font-size:.95rem}
+  .logo-tag{font-size:.95rem}
+}
+
+/* HERO */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;background:var(--teal-deep);overflow:hidden;margin-top:64px}
+.hero-bg{position:absolute;inset:0;background:url('images/hero-poster.jpg') center/cover;opacity:.45}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,62,72,.85) 0%,rgba(6,62,72,.5) 100%)}
+.hero-content{position:relative;z-index:2;max-width:var(--max-w);margin:0 auto;padding:4rem 1.25rem}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.03em;max-width:16ch;text-wrap:balance}
+.hero h1 span{display:block;color:var(--amber)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.25rem 0}
+.hero-tags span{background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:600;padding:.3rem .7rem;border-radius:100px}
+.hero p{color:rgba(255,255,255,.8);max-width:50ch;font-size:1rem;margin-bottom:1.5rem}
+.hero-btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.4rem;background:var(--amber);color:#fff;font-weight:700;font-size:.9rem;padding:.75rem 1.5rem;border-radius:var(--radius);transition:background .2s}
+.btn-primary:hover{background:var(--amber-light);color:#fff}
+.btn-outline{display:inline-flex;align-items:center;gap:.4rem;border:2px solid rgba(255,255,255,.4);color:#fff;font-weight:700;font-size:.9rem;padding:.7rem 1.5rem;border-radius:var(--radius);transition:all .2s}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+@media(min-width:768px){.hero{margin-top:80px;min-height:85vh}}
+@media(max-width:480px){.hero-btns{flex-direction:column}.hero-btns a{text-align:center;justify-content:center}}
+
+/* TRUST BAR */
+.trust{background:var(--teal-mid);padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.trust-row{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:1rem 2rem}
+.trust-item{font-size:.78rem;font-weight:700;color:rgba(255,255,255,.6);white-space:nowrap;display:flex;align-items:center;gap:.4rem}
+.trust-item .hl{color:var(--amber)}
+
+/* SECTIONS */
+section{padding:clamp(3rem,6vw,5rem) 0}
+.sec-label{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-dark);text-align:center;margin-bottom:.4rem}
+.sec-title{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;color:var(--ink);text-align:center;margin-bottom:.6rem;text-wrap:balance;line-height:1.2;letter-spacing:-.025em}
+.sec-sub{font-size:.95rem;color:var(--ink-mid);text-align:center;max-width:55ch;margin:0 auto 2rem}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.svc-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s;text-decoration:none;color:var(--ink)}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1);color:var(--ink)}
+.svc-card img{width:100%;height:160px;object-fit:cover}
+.svc-card h3{padding:.75rem 1rem 0;font-size:.95rem;font-weight:700}
+.svc-card p{padding:.3rem 1rem .75rem;font-size:.8rem;color:var(--ink-mid);line-height:1.5}
+
+/* WHY US */
+.why{background:var(--teal-deep);color:#fff}
+.why .sec-label{color:var(--amber-light)}
+.why .sec-title{color:#fff}
+.why .sec-sub{color:rgba(255,255,255,.7)}
+.reason-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem}
+.reason{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.5rem}
+.reason h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;color:var(--amber-light)}
+.reason p{font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.55}
+
+/* REVIEWS */
+.alt-bg{background:var(--white)}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.review{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.review-stars{color:var(--amber);font-size:1rem;margin-bottom:.5rem;letter-spacing:2px}
+.review q{font-size:.88rem;color:var(--ink);line-height:1.55;display:block;margin-bottom:.75rem;font-style:normal}
+.review cite{font-size:.78rem;font-weight:700;color:var(--ink-mid);font-style:normal;display:block}
+.review .loc{font-size:.72rem;color:var(--ink-light);margin-top:.15rem}
+
+/* AREAS */
+.area-list{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
+.area-pill{background:var(--white);border:1px solid var(--border);padding:.45rem 1rem;border-radius:100px;font-size:.82rem;font-weight:600;color:var(--ink-mid);transition:all .2s}
+.area-pill:hover{border-color:var(--teal);color:var(--teal)}
+
+/* CTA */
+.cta{position:relative;background:var(--teal-deep);color:#fff;text-align:center;overflow:hidden}
+.cta-bg{position:absolute;inset:0;background:url('images/hero-poster.jpg') center/cover;opacity:.25}
+.cta-inner{position:relative;z-index:2}
+.cta h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;margin-bottom:.5rem}
+.cta p{color:rgba(255,255,255,.8);max-width:50ch;margin:0 auto 1.5rem;font-size:.95rem}
+.cta-phone{font-size:1.3rem;font-weight:800;color:var(--amber);display:block;margin-bottom:1.25rem}
+.cta-phone:hover{color:var(--amber-light)}
+.cta-btns{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.btn-white{display:inline-flex;align-items:center;gap:.4rem;background:#fff;color:var(--teal-deep);font-weight:700;font-size:.9rem;padding:.75rem 1.5rem;border-radius:var(--radius);transition:background .2s}
+.btn-white:hover{background:var(--surface);color:var(--teal-deep)}
+
+/* CONTACT FORM */
+.form-section{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+@media(max-width:767px){.contact-grid{grid-template-columns:1fr}}
+.contact-info h3{font-size:1.1rem;font-weight:800;margin-bottom:.75rem}
+.contact-info p{font-size:.9rem;color:var(--ink-mid);line-height:1.6;margin-bottom:.75rem}
+.contact-info a{color:var(--amber-dark);font-weight:600}
+.contact-info a:hover{color:var(--amber)}
+.cred-list{list-style:none;margin-top:1rem}
+.cred-list li{font-size:.82rem;color:var(--ink-mid);padding:.25rem 0;display:flex;align-items:center;gap:.4rem}
+.form-group{margin-bottom:.85rem}
+.form-group label{display:block;font-size:.78rem;font-weight:700;margin-bottom:.25rem;color:var(--ink-mid)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.6rem .75rem;border:1px solid var(--border);border-radius:var(--radius);font:inherit;font-size:.88rem;background:var(--surface);transition:border .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal);outline:none}
+.form-group textarea{min-height:90px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-submit{display:block;width:100%;background:var(--amber);color:#fff;font-weight:700;font-size:.9rem;padding:.75rem;border:none;border-radius:var(--radius);cursor:pointer;transition:background .2s}
+.form-submit:hover{background:var(--amber-light)}
+.form-success{display:none;text-align:center;padding:2rem 0}
+.form-success.show{display:block}
+.form-success h3{color:var(--teal);font-size:1.1rem;margin-bottom:.4rem}
+
+/* FOOTER */
+.footer{background:var(--teal-deep);color:rgba(255,255,255,.6);padding:2.5rem 0 1.5rem;font-size:.82rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer a{color:rgba(255,255,255,.7);transition:color .2s}
+.footer a:hover{color:#fff}
+.footer-copy{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem}
+
+/* MOBILE CTA */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--amber);text-align:center;padding:.65rem 1rem;padding-bottom:calc(.65rem + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 16px rgba(0,0,0,.15)}
+.mobile-bar a{color:#fff;font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:.4rem;min-height:44px}
+@media(max-width:767px){.mobile-bar{display:block}.footer{padding-bottom:4rem}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Tad Oliphant Construction LLC",
+  "url": "https://tadoliphantconstruction.com",
+  "telephone": "+15412700274",
+  "address": {"@type": "PostalAddress", "streetAddress": "174 Chetco Court", "addressLocality": "Siletz", "addressRegion": "OR", "postalCode": "97380", "addressCountry": "US"},
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "54"},
+  "areaServed": [
+    {"@type": "City", "name": "Siletz"}, {"@type": "City", "name": "Newport"}, {"@type": "City", "name": "Lincoln City"},
+    {"@type": "City", "name": "Toledo"}, {"@type": "City", "name": "Depoe Bay"}, {"@type": "City", "name": "Waldport"}, {"@type": "City", "name": "South Beach"}
+  ],
+  "foundingDate": "2015",
+  "founder": {"@type": "Person", "name": "Tad Oliphant"},
+  "priceRange": "$$"
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="Tad Oliphant Construction">
+      <div class="nav-logo-text"><span class="logo-name">Tad Oliphant</span><span class="logo-tag">Construction</span></div>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Open menu" onclick="var n=document.querySelector('.nav-links'),o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.innerHTML=o?'&times;':'&#9776;';document.body.style.overflow=o?'hidden':''">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:+15412700274" class="nav-cta">Call Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Quality Construction <span>Built for the Oregon Coast</span></h1>
+    <div class="hero-tags">
+      <span>Decks</span><span>Siding</span><span>Roofing</span><span>Remodeling</span><span>Windows &amp; Doors</span><span>Dry-Rot Repair</span>
+    </div>
+    <p>Owner-led general contracting with 20+ years of coastal construction experience. From new decks to full remodels, we build it right the first time.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Request a Free Estimate &#8594;</a>
+      <a href="tel:+15412700274" class="btn-outline">&#9742; (541) 270-0274</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-row">
+      <span class="trust-item">&#9733; <span class="hl">A+ BBB Rating</span></span>
+      <span class="trust-item">&#9989; BBB Accredited</span>
+      <span class="trust-item">&#128736; Since 2015</span>
+      <span class="trust-item">&#128196; CCB #206723</span>
+      <span class="trust-item">&#128274; Licensed &bull; Bonded &bull; Insured</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <p class="sec-label">What We Do</p>
+    <h2 class="sec-title">Construction Services</h2>
+    <p class="sec-sub">From decks and siding to full-home remodels, we handle every phase of your project.</p>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <img src="images/svc-deck.jpg" alt="Composite deck construction" loading="lazy">
+        <h3>Deck Construction &amp; Repair</h3>
+        <p>New composite and wood decks built for coastal weather. Repairs, railings, and structural work.</p>
+      </div>
+      <div class="svc-card">
+        <img src="images/svc-siding.jpg" alt="Siding installation" loading="lazy">
+        <h3>Siding &amp; Exterior</h3>
+        <p>Siding replacement, exterior repairs, and coastal-weather damage restoration.</p>
+      </div>
+      <div class="svc-card">
+        <img src="images/svc-roofing.jpg" alt="Roofing work" loading="lazy">
+        <h3>Roofing</h3>
+        <p>Roof replacement and repair built to handle 60+ inches of rain and Pacific storm winds.</p>
+      </div>
+      <div class="svc-card">
+        <img src="images/svc-remodel.jpg" alt="Kitchen remodel" loading="lazy">
+        <h3>Home Remodeling</h3>
+        <p>Kitchen, bathroom, and whole-home renovations. Every detail from demo through final finishes.</p>
+      </div>
+      <div class="svc-card">
+        <img src="images/svc-windows.jpg" alt="Window replacement" loading="lazy">
+        <h3>Windows &amp; Doors</h3>
+        <p>Replacement windows, exterior doors, and related framing. Better efficiency and curb appeal.</p>
+      </div>
+      <div class="svc-card">
+        <img src="images/svc-dryrot.jpg" alt="Dry rot repair" loading="lazy">
+        <h3>Dry-Rot Repair</h3>
+        <p>Expert detection and repair of hidden rot damage. We expose, replace, and protect.</p>
+      </div>
+      <div class="svc-card">
+        <img src="images/svc-painting.jpg" alt="Exterior painting" loading="lazy">
+        <h3>Painting</h3>
+        <p>Interior and exterior painting with proper prep. No shortcuts on surface prep or finish quality.</p>
+      </div>
+      <div class="svc-card">
+        <img src="images/svc-fencing.jpg" alt="Cedar fence" loading="lazy">
+        <h3>Fencing &amp; Carpentry</h3>
+        <p>Fences, windbreaks, and custom carpentry built for coastal wind exposure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="wrap">
+    <p class="sec-label">Why Homeowners Choose Tad</p>
+    <h2 class="sec-title">Built on Trust, Not Just Skill</h2>
+    <p class="sec-sub">After 20+ years and 54 five-star reviews, our reputation comes down to four things.</p>
+    <div class="reason-grid">
+      <div class="reason">
+        <h3>Owner on Every Job</h3>
+        <p>Tad personally oversees every project. You're not handed off to a subcontractor. The person who quoted your job is the one building it.</p>
+      </div>
+      <div class="reason">
+        <h3>Honest Communication</h3>
+        <p>When we find hidden rot or unexpected damage, we explain the problem, show you options, and keep costs transparent.</p>
+      </div>
+      <div class="reason">
+        <h3>On Time &amp; On Budget</h3>
+        <p>Customers consistently report projects completed on schedule and at or below the agreed price. We show up when we say we will.</p>
+      </div>
+      <div class="reason">
+        <h3>Coastal Expertise</h3>
+        <p>Salt air, 60+ inches of rain, and sustained wind demand different building methods. We know what lasts out here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="alt-bg" id="reviews">
+  <div class="wrap">
+    <p class="sec-label">What Our Customers Say</p>
+    <h2 class="sec-title">5.0 Stars Across 54 Google Reviews</h2>
+    <p class="sec-sub">Real feedback from Lincoln County homeowners.</p>
+    <div class="review-grid">
+      <div class="review">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <q>Tad and his crew showed up when promised and completed the work on schedule. The new deck looks incredible, and they found and fixed rot damage in the framing we didn't even know about.</q>
+        <cite>Newport Homeowner</cite>
+        <div class="loc">Deck Construction &amp; Dry-Rot Repair</div>
+      </div>
+      <div class="review">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <q>We've hired Tad for three different projects now - siding, a deck rebuild, and interior painting. Every time, the price is fair, the communication is excellent, and the work is top-quality.</q>
+        <cite>Repeat Customer</cite>
+        <div class="loc">Multiple Projects - Lincoln County</div>
+      </div>
+      <div class="review">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <q>Honest, dependable, and does excellent work. When he discovered unexpected structural damage during our siding project, he explained everything clearly and kept the cost reasonable.</q>
+        <cite>Siletz Homeowner</cite>
+        <div class="loc">Siding Replacement &amp; Structural Repair</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section id="areas">
+  <div class="wrap">
+    <p class="sec-label">Service Area</p>
+    <h2 class="sec-title">Serving Lincoln County &amp; the Central Oregon Coast</h2>
+    <p class="sec-sub">Based in Siletz, we work throughout Lincoln County and surrounding coastal communities.</p>
+    <div class="area-list">
+      <span class="area-pill">Siletz</span>
+      <span class="area-pill">Newport</span>
+      <span class="area-pill">Lincoln City</span>
+      <span class="area-pill">Toledo</span>
+      <span class="area-pill">Depoe Bay</span>
+      <span class="area-pill">Waldport</span>
+      <span class="area-pill">South Beach</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-bg"></div>
+  <div class="wrap cta-inner">
+    <h2>Ready to Start Your Project?</h2>
+    <p>Whether it's a new deck, a roof replacement, or hidden rot you need investigated - we'll give you an honest assessment and a fair price.</p>
+    <a href="tel:+15412700274" class="cta-phone">&#9742; (541) 270-0274</a>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-white">Request a Free Estimate</a>
+      <a href="tel:+15412700274" class="btn-outline">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="form-section" id="contact">
+  <div class="wrap">
+    <p class="sec-label">Get In Touch</p>
+    <h2 class="sec-title">Request a Free Estimate</h2>
+    <p class="sec-sub">Tell us about your project and we'll get back to you promptly.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Tad Oliphant Construction LLC</h3>
+        <p>Oregon Coast general contractor based in Siletz. Owner Tad Oliphant is on every job - you're hiring a neighbor, not a corporation.</p>
+        <p><strong>Phone:</strong> <a href="tel:+15412700274">(541) 270-0274</a></p>
+        <p><strong>Address:</strong> 174 Chetco Court, Siletz, OR 97380</p>
+        <ul class="cred-list">
+          <li>&#9989; Oregon CCB #206723</li>
+          <li>&#9733; A+ BBB Accredited</li>
+          <li>&#128274; Licensed, Bonded &amp; Insured</li>
+          <li>&#9888; Lead Paint Certified</li>
+          <li>&#128077; 0 BBB Complaints</li>
+        </ul>
+      </div>
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <input type="hidden" name="_cc" value="will@supportwellnessglobal.com">
+        <input type="hidden" name="_subject" value="New Estimate Request - Tad Oliphant Construction">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        <div class="form-row">
+          <div class="form-group"><label for="name">Name *</label><input type="text" id="name" name="name" required></div>
+          <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required></div>
+        </div>
+        <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email"></div>
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>Deck Construction</option><option>Deck Repair</option>
+            <option>Siding &amp; Exterior</option><option>Dry-Rot Repair</option>
+            <option>Roofing</option><option>Windows &amp; Doors</option>
+            <option>Kitchen Remodeling</option><option>Bathroom Remodeling</option>
+            <option>Home Remodeling</option><option>Painting</option>
+            <option>Fencing</option><option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="address">Property Address</label><input type="text" id="address" name="address" placeholder="123 Main St, Newport, OR"></div>
+        <div class="form-group"><label for="message">Project Details</label><textarea id="message" name="message" placeholder="Describe your project..."></textarea></div>
+        <button type="submit" class="form-submit">Send Request &#8594;</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <h3>&#10003; Request Received</h3>
+        <p>Thanks! We'll review your project details and get back to you shortly.</p>
+        <p style="margin-top:1rem;"><a href="tel:+15412700274" style="color:var(--amber-dark);font-weight:700;">Call (541) 270-0274</a> for faster response.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        <span>&copy; 2026 Tad Oliphant Construction LLC</span>
+        <span>&middot; Oregon CCB #206723</span>
+        <span>&middot; Licensed &amp; Insured</span>
+      </div>
+      <a href="tel:+15412700274">(541) 270-0274</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-bar"><a href="tel:+15412700274">&#9742; Call (541) 270-0274</a></div>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('contactForm');
+  fetch('https://formsubmit.co/ajax/oliphant454@yahoo.com', {method:'POST', body:new FormData(form)})
+    .then(function(){form.style.display='none';document.getElementById('formSuccess').classList.add('show')})
+    .catch(function(){form.style.display='none';document.getElementById('formSuccess').classList.add('show')});
+}
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    var nav=document.querySelector('.nav-links');
+    if(nav.classList.contains('open')){
+      nav.classList.remove('open');
+      document.querySelector('.nav-toggle').innerHTML='&#9776;';
+      document.body.style.overflow='';
+    }
+  });
+});
+</script>
+</body>
+</html>

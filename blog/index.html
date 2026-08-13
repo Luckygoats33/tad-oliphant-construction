@@ -281,7 +281,7 @@
       <li><a href="gallery.html">Projects</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="index.html" style="color:var(--gold);">Blog</a></li>
+      <li><a href="blog/index.html" style="color:var(--gold);">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="#" class="nav-cta" onclick="openEstimate(event)">Free Estimate</a></li>
     </ul>
@@ -374,7 +374,7 @@
           <li><a href="reviews.html">Reviews</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="service-areas.html">Service Areas</a></li>
-          <li><a href="index.html">Blog</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -586,7 +586,7 @@ function renderBlog() {
   var grid = document.getElementById('blogGrid');
   grid.innerHTML = page.map(function(p) {
     var img = p.image ? '' + p.image : (CAT_IMAGES[p.category] || 'images/hero-poster.jpg');
-    return '<a href="' + p.slug + '.html" class="blog-card reveal">' +
+    return '<a href="blog/' + p.slug + '.html" class="blog-card reveal">' +
       '<img src="' + img + '" alt="" class="blog-card-img" loading="lazy" decoding="async">' +
       '<div class="blog-card-body">' +
       '<div class="blog-card-cat">' + p.categoryLabel + '</div>' +

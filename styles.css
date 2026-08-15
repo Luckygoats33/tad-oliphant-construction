@@ -537,8 +537,6 @@ a.area-tag:hover {
   gap: 2rem; margin-bottom: 2rem;
 }
 .footer-brand p { max-width: 280px; line-height: 1.6; margin-top: 0.75rem; }
-.footer-mascot { width: 80px; height: auto; margin-top: 1rem; border-radius: 8px; transition: transform 0.3s ease; }
-.footer-mascot:hover { transform: scale(1.05); }
 .site-footer h3 {
   font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em;
   text-transform: uppercase; color: rgba(255,255,255,0.4);

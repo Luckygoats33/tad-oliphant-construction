@@ -278,7 +278,7 @@ a:hover { color: var(--gold); }
 }
 .badge {
   display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem;
-  font-weight: 700; color: rgba(255,255,255,0.6); white-space: nowrap;
+  font-weight: 700; color: rgba(255,255,255,0.8); white-space: nowrap;
 }
 .badge-icon { font-size: 1.1rem; }
 .badge .highlight { color: var(--gold); }
@@ -552,12 +552,12 @@ a.area-tag:hover {
 }
 .footer-areas h3 {
   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.75rem;
+  text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 0.75rem;
 }
 .footer-areas .area-tag {
   font-size: 0.75rem; padding: 0.3rem 0.65rem;
   background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.8);
 }
 .footer-areas a.area-tag:hover {
   border-color: var(--gold); color: var(--gold);
@@ -695,7 +695,7 @@ a.area-tag:hover {
   display: flex; justify-content: center; gap: 0.4rem; font-size: 0.78rem;
   color: rgba(255,255,255,0.45); margin-bottom: 1rem; position: relative;
 }
-.breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
+.breadcrumb a { color: rgba(255,255,255,0.78); text-decoration: none; }
 .breadcrumb a:hover { color: var(--gold); }
 
 /* ========================
@@ -817,15 +817,15 @@ a.area-tag:hover {
    SCROLL REVEAL SYSTEM
    ======================== */
 .reveal {
-  opacity: 0; transform: translateY(28px);
+  opacity: 0.15; transform: translateY(12px);
   transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
+.reveal-left { opacity: 0.15; transform: translateX(-20px); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
 .reveal-left.visible { opacity: 1; transform: translateX(0); }
-.reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
+.reveal-right { opacity: 0.15; transform: translateX(20px); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
-.reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
+.reveal-scale { opacity: 0.15; transform: scale(0.96); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
 .reveal-scale.visible { opacity: 1; transform: scale(1); }
 
 /* Stagger delays */
@@ -935,7 +935,7 @@ a.area-tag:hover {
   .nav-links.open .has-dropdown .nav-dropdown li a {
     font-size: 0.95rem;
     font-weight: 500;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.78);
     padding: 0.4rem 0;
     display: block;
     transition: color 0.2s;

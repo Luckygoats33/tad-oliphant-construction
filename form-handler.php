@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/resend-config.php';
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: https://tadoliphantconstruction.com');
 header('Access-Control-Allow-Methods: POST, OPTIONS');

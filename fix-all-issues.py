@@ -103,23 +103,16 @@ for fpath in html_files:
             '<a href="service-areas.html">Services <span class="caret"></span></a>'
         )
 
-    # 3. FIX YEARS CONSISTENCY - "since 2015" -> "with 20+ years of experience"
-    # In meta descriptions
-    content = content.replace('Serving Lincoln County since 2015.', 'Serving Lincoln County with 20+ years of experience.')
-    # In JSON-LD description
-    content = content.replace('Serving Lincoln County since 2015."', 'Serving Lincoln County with 20+ years of experience."')
-    # Badge "Since 2015" -> "20+ Years"
+    # 3. YEARS CONSISTENCY - company tenure is since 2015 / 10+ years in business.
+    # Reserve "20+ years" for Tad's personal coastal trade experience only.
+    content = content.replace('Serving Lincoln County with 20+ years of experience.', 'Serving Lincoln County since 2015.')
     content = content.replace(
-        '<div class="badge"><span class="badge-icon">&#128736;</span> Since 2015</div>',
-        '<div class="badge"><span class="badge-icon">&#128736;</span> 20+ Years Experience</div>'
+        '<div class="badge"><span class="badge-icon">&#128736;</span> 20+ Years Experience</div>',
+        '<div class="badge"><span class="badge-icon">&#128736;</span> Since 2015</div>'
     )
-    # "10+ Years" variants
-    content = content.replace('10+ Years of Experience', '20+ Years of Experience')
-    content = content.replace('10+ years of experience', '20+ years of experience')
-    # Footer text
     content = content.replace(
-        'Serving Lincoln County since 2015. Licensed',
-        'Serving Lincoln County with 20+ years of experience. Licensed'
+        'contractor with 20+ years on the Oregon Coast',
+        'contractor serving the Oregon Coast since 2015'
     )
     if 'since 2015' in content.lower() or '10+ year' in content.lower():
         fixes['years_fixed'] += 1

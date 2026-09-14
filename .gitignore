@@ -2,3 +2,7 @@ resend-config.php
 deploy-kinsta.py
 deploy-seo-update.py
 sftp_batch.txt
+client-intake.md
+*-intake.md
+.env
+.env.*
